@@ -272,10 +272,13 @@ def editInfo(value1, newName, newID, newMark1, newMark2, newMark3, newExamMark):
         lines = f.readlines()
     with open("studentMarks.txt", "w") as f:
         for line in lines:
-            if ptr != lineQry:
+            try:
+                if ptr != lineQry:
+                    f.write(line)
+                else:
+                    f.write(Id + "," + name  + "," + m1 + "," + m2 + "," + m3 + "," + examMark)
+            except:
                 f.write(line)
-            else:
-                f.write(Id + "," + name  + "," + m1 + "," + m2 + "," + m3 + "," + examMark)
             ptr += 1
     f.close()
     menuScreen()
