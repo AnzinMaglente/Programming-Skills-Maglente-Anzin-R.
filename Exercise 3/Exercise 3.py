@@ -68,6 +68,13 @@ def gradecalculator(markPercentage):
         grade = "F"
         return grade
 
+def totalAverageCalculator():
+    totalScore = 0
+    for i in range(len(students)):
+        totalScore += float(students[i]["overallPercentage"])*100
+    totalAverage = totalScore/len(students)
+    return(totalAverage)
+
 def printHighestScorer(Lb1):
     """ This function finds the highest scoring student. """
 
@@ -140,7 +147,16 @@ def printAllInfo(Lb1):
     """ This function inserts all of the students information inside the listbox. """
 
     Lb1.delete(0, END)
+    totalAverage = totalAverageCalculator()
     currentLine = 0
+
+    Lb1.insert(currentLine, "There are a total of " + str(len(students)) + " students inside the class.")
+    currentLine += 1
+    Lb1.insert(currentLine, "The class' total average is " + str(totalAverage) + "%")
+    currentLine += 1
+    Lb1.insert(currentLine, "")
+    currentLine += 1
+    
     for i in students:
         markPercentage = float(i["overallPercentage"])*100
 
