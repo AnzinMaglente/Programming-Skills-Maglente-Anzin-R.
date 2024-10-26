@@ -69,6 +69,8 @@ def gradecalculator(markPercentage):
         return grade
 
 def totalAverageCalculator():
+    """ This calculates the total average of the class. """
+    
     totalScore = 0
     for i in range(len(students)):
         totalScore += float(students[i]["overallPercentage"])*100
