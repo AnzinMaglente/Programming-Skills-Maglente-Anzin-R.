@@ -81,6 +81,8 @@ def gradecalculator(markPercentage):
         return grade
 
 def totalAverageCalculator():
+    """ This calculates the total average of the class. """
+    
     totalScore = 0
     for i in range(len(students)):
         totalScore += float(students[i]["overallPercentage"])*100
@@ -303,6 +305,8 @@ def addInfo(newName, newID, mark1, mark2, mark3, newExamMark):
     menuScreen()
 
 def getSpecify(value1, newName, newID, newMark1, newMark2, newMark3, newExamMark):
+    """ This function gets the specific student and inserts them inside the queries
+    the user may want to change. """
 
     getAllInfo()
     getStudentValues()
